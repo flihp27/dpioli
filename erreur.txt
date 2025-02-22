@@ -1,0 +1,8 @@
+python config_dpi.py
+Traceback (most recent call last):
+  File "C:\Users\furio\OneDrive\Documents\GitHub\dpioli\config_dpi.py", line
+ 14, in <module>
+    import openrazer.client
+  File "C:\Users\furio\AppData\Local\Programs\Python\Python313\Lib\site-packages\openrazer\__init__.py", line 1, in <module>
+    raise RuntimeError("Should never be installed")
+RuntimeError: Should never be installed
