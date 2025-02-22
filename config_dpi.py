@@ -1,8 +1,8 @@
-/* Une touche sur mon clavier doit permettre d'augmenter le nombre de dpi de ma souris au maximum, soit de 4200.
-Je veux pouvoir utiliser la même touche du clavier qui a permit d'augmenter les dpi au maximum pour remettre le nombre de dpi par défault de ma souris, soit de 1800.
-L'exécution du code doit se faire sous windows 11.
-Il faut un interface graphique qui permet de configurer et de lier la touche du clavier que l'utilisateur désire utiliser pour modifier le nombre de dpi. 
-L'application doit pouvoir s'exécuter pendant l'utilisation d'un jeu vidéo. */
+# Une touche sur mon clavier doit permettre d'augmenter le nombre de dpi de ma souris au maximum, soit de 4200.
+# Je veux pouvoir utiliser la même touche du clavier qui a permit d'augmenter les dpi au maximum pour remettre le nombre de dpi par défault de ma souris, soit de 1800.
+# L'exécution du code doit se faire sous windows 11.
+# Il faut un interface graphique qui permet de configurer et de lier la touche du clavier que l'utilisateur désire utiliser pour modifier le nombre de dpi. 
+# L'application doit pouvoir s'exécuter pendant l'utilisation d'un jeu vidéo.
 
 import tkinter as tk
 from tkinter import messagebox
