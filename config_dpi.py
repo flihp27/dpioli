@@ -4,11 +4,14 @@
 # Il faut un interface graphique qui permet de configurer et de lier la touche du clavier que l'utilisateur désire utiliser pour modifier le nombre de dpi. 
 # L'application doit pouvoir s'exécuter pendant l'utilisation d'un jeu vidéo.
 # Ajoute l'affichage des dpi actuel de la souris dans l'interface graphique.
+# Tu dois utiliser la bonne librairie du fabricant Razer pour modifier les dpi de la souris.
+# Tu dois utiliser la librairie pynput pour écouter les touches du clavier.
+# Tu dois utiliser la librairie tkinter pour créer l'interface graphique.
 
 import tkinter as tk
 from tkinter import messagebox
 from pynput import keyboard
-import ctypes
+import openrazer.client
 
 # Constantes pour les DPI
 DPI_MAX = 4200
@@ -18,10 +21,16 @@ DPI_DEFAULT = 1800
 current_dpi = DPI_DEFAULT
 selected_key = None
 
+# Initialisation du client openrazer
+client = openrazer.client.DeviceManager()
+devices = client.devices
+
 # Fonction pour changer les DPI de la souris
 def set_mouse_dpi(dpi):
-    ctypes.windll.user32.SystemParametersInfoW(113, 0, dpi, 0)
-    dpi_label.config(text=f"DPI actuel: {dpi}")
+    for device in devices:
+        if device.type == "mouse":
+            device.dpi = dpi
+            dpi_label.config(text=f"DPI actuel: {dpi}")
 
 # Fonction pour gérer la pression de la touche configurée
 def on_press(key):

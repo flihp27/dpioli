@@ -11,7 +11,7 @@ Pour exécuter ce code Python sur Windows 11, suivez ces étapes :
 ## Installer les dépendances :
 
 - Ouvrez l'invite de commandes (Command Prompt) en appuyant sur Win + R, tapez cmd et appuyez sur Entrée.
-- Installez les bibliothèques nécessaires avec pip : 'pip install pyput'
+- Installez les bibliothèques nécessaires avec pip : 'pip install pyput' & 'pip install openrazer'
 
 ## Enregistrer le script :
 
