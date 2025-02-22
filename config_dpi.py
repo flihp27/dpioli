@@ -3,6 +3,7 @@
 # L'exécution du code doit se faire sous windows 11.
 # Il faut un interface graphique qui permet de configurer et de lier la touche du clavier que l'utilisateur désire utiliser pour modifier le nombre de dpi. 
 # L'application doit pouvoir s'exécuter pendant l'utilisation d'un jeu vidéo.
+# Ajoute l'affichage des dpi actuel de la souris dans l'interface graphique.
 
 import tkinter as tk
 from tkinter import messagebox
@@ -20,6 +21,7 @@ selected_key = None
 # Fonction pour changer les DPI de la souris
 def set_mouse_dpi(dpi):
     ctypes.windll.user32.SystemParametersInfoW(113, 0, dpi, 0)
+    dpi_label.config(text=f"DPI actuel: {dpi}")
 
 # Fonction pour gérer la pression de la touche configurée
 def on_press(key):
@@ -53,6 +55,9 @@ key_entry = tk.Entry(root)
 key_entry.pack(pady=5)
 
 tk.Button(root, text="Configurer", command=configure_key).pack(pady=10)
+
+dpi_label = tk.Label(root, text=f"DPI actuel: {current_dpi}")
+dpi_label.pack(pady=10)
 
 # Démarrage de l'écouteur de touches
 listener = keyboard.Listener(on_press=on_press)
